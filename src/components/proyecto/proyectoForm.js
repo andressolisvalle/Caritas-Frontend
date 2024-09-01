@@ -20,7 +20,6 @@ const ProyectoForm =({actualizarProyecto})=>{
         };
 
         try {
-            console.log(nuevoProyecto);
             await postProyecto(nuevoProyecto);
             setMessage('Institución registrada exitosamente');
             setNombre('');
@@ -30,6 +29,7 @@ const ProyectoForm =({actualizarProyecto})=>{
             actualizarProyecto();
         } catch (error) {
             setMessage('Error registrando el proyecto');
+            window.alert(message);
         }
 
 

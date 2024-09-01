@@ -31,12 +31,20 @@ export const putInstitucion = async (institucion) => {
     }
 };
 
+export const deleteInstitucion = async (id) => {
+    try {
+      await axios.delete(`${API_BASE_URL}/instituciones/${id}`);
+    } catch (error) {
+        window.alert(error.response.data.error);
+    }
+};
+
+
 
 
 export const getProyectos = async () => {
     try {
         const response = await axios.get(`${API_BASE_URL}/proyectos`);
-        console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error fetching proyectos:', error);
@@ -66,10 +74,17 @@ export const putProyecto = async (proyecto) => {
     }
 };
 
+export const deleteProyecto = async (id) => {
+    try {
+      await axios.delete(`${API_BASE_URL}/proyectos/${id}`);
+    } catch (error) {
+        window.alert(error.response.data.error);
+    }
+};
+
 export const getBeneficiario = async () => {
     try {
         const response = await axios.get(`${API_BASE_URL}/beneficiarios`);
-        console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error fetching beneficiarios:', error);
@@ -79,11 +94,28 @@ export const getBeneficiario = async () => {
 export const postBeneficiario = async (beneficiario) => {
     try {
         const response = await axios.post(`${API_BASE_URL}/beneficiarios`, beneficiario);
-        console.log(response.data);
         return response.data;
     } catch (error) {
         console.error('Error creating beneficiarios:', error);
         throw error;
+    }
+};
+
+export const putBeneficiario = async (beneficiario) => {
+    try {
+        const response = await axios.put(`${API_BASE_URL}/beneficiarios/${beneficiario.id}`, beneficiario);
+        return response.data;
+    } catch (error) {
+        console.error('Error al editar beneficiarios:', error);
+        throw error;
+    }
+};
+
+export const deleteBeneficiarios = async (id) => {
+    try {
+      await axios.delete(`${API_BASE_URL}/beneficiarios/${id}`);
+    } catch (error) {
+        window.alert(error.response.data.error);
     }
 };
 

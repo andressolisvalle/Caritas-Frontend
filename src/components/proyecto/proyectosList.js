@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ModalProyectos from './modalProyecto';
+import { deleteProyecto } from '../../apiService';
 
 const ProyectosList = ({ proyectos, actualizarProyecto }) => {
   const [selectedProyecto, setSelectedProyecto] = useState(null);
@@ -17,6 +18,17 @@ const ProyectosList = ({ proyectos, actualizarProyecto }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedProyecto(null);
+  };
+
+  const handleDeleteClick = async (id) => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar este proyecto?")) {
+      try {
+        await deleteProyecto(id);
+        actualizarProyecto();
+      } catch (error) {
+        console.error('Error al eliminar el proyecto', error);
+      }
+    }
   };
 
   if (!proyectos || proyectos.length === 0) {
@@ -38,7 +50,7 @@ const ProyectosList = ({ proyectos, actualizarProyecto }) => {
         <tbody className="text-gray-600 text-sm font-light">
           {proyectos.map((proyecto) => (
             <tr
-              key={proyecto.id} // Usa proyecto.id en lugar de proyectos.key
+              key={proyecto.id}
               className="border-b border-gray-200 hover:bg-gray-100"
             >
               <td className="py-3 px-6 text-left">{proyecto.NOMBRE_PROYECTO}</td>
@@ -52,7 +64,10 @@ const ProyectosList = ({ proyectos, actualizarProyecto }) => {
                   >
                     ✏️
                   </div>
-                  <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110 cursor-pointer">
+                  <div
+                    className="w-4 mr-2 transform hover:text-red-500 hover:scale-110 cursor-pointer"
+                    onClick={() => handleDeleteClick(proyecto.id)}
+                  >
                     🗑️
                   </div>
                 </div>

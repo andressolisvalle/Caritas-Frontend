@@ -46,6 +46,7 @@ const InstitucionForm = ({ actualizarInstituciones }) => {
                 onChange={(e) => setNombre(e.target.value)}
                 placeholder="Nombre de la institución"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                required
               />
             </div>
     
@@ -60,6 +61,7 @@ const InstitucionForm = ({ actualizarInstituciones }) => {
                 onChange={(e) => setDireccion(e.target.value)}
                 placeholder="Dirección de la institución"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                required
               />
             </div>
     
@@ -70,6 +72,7 @@ const InstitucionForm = ({ actualizarInstituciones }) => {
               <input
                 id="telefono"
                 type="tel"
+                required
                 value={telefono}
                 onChange={(e) => setTelefono(e.target.value)}
                 placeholder="Teléfono de contacto"
@@ -88,6 +91,7 @@ const InstitucionForm = ({ actualizarInstituciones }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Correo electrónico"
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                required
               />
             </div>
     

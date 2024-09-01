@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import EditarInstitucionModal from './modalUpdate';
+import { deleteInstitucion } from '../../apiService';
 
 const InstitucionesList = ({ instituciones, actualizarInstituciones }) => {
   const [selectedInstitucion, setSelectedInstitucion] = useState(null);
@@ -14,10 +15,19 @@ const InstitucionesList = ({ instituciones, actualizarInstituciones }) => {
     setIsModalOpen(true);
     console.log(isModalOpen);
   };
-  console.log(isModalOpen);
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedInstitucion(null);
+  };
+  const handleDeleteClick = async (id) => {
+    if (window.confirm("¿Estás seguro de que deseas eliminar esta institucion?")) {
+      try {
+        await deleteInstitucion(id);
+        actualizarInstituciones();
+      } catch (error) {
+        console.error('Error al eliminar el proyecto', error);
+      }
+    }
   };
 
   if (!instituciones || instituciones.length === 0) {
@@ -26,8 +36,6 @@ const InstitucionesList = ({ instituciones, actualizarInstituciones }) => {
 
   return (
     <div className="overflow-x-auto">
-      {/* Modal para editar la institución */}
-      
       <h1 className="text-2xl font-semibold text-gray-800 mb-4">Lista de Instituciones</h1>
       <table className="min-w-full bg-white border border-gray-200 rounded-lg">
         <thead>
@@ -57,7 +65,8 @@ const InstitucionesList = ({ instituciones, actualizarInstituciones }) => {
                   >
                     ✏️
                   </button>
-                  <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110 cursor-pointer">
+                  <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110 cursor-pointer"
+                  onClick={() => handleDeleteClick(institucion.id)}>
                     🗑️
                   </div>
                 </div>

@@ -58,6 +58,7 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
       actualizarBeneficiarios();
     } catch (error) {
       setMessage('Error registrando el proyecto');
+      window.alert(message);
     }
   };
 
