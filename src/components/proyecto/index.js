@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { getProyectos } from "../../apiService";
-import ProyectosList from "./proyectosList";
-import ProyectoForm from "./proyectoForm";
+import ProyectosList from "./ProyectosList";
+import ProyectoForm from "./ProyectoForm";
 
 function Proyecto() {
   const [proyectos, setproyectos] = useState([]);

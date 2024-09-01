@@ -1,52 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
+import ModalProyectos from './modalProyecto';
 
-const ProyectosList = ({proyectos,actualizarProyecto}) => {
-  //const [proyectos, setProyectos] = useState([]);
-    //   const [loading, setLoading] = useState(true);
-    //   const [error, setError] = useState(null);
+const ProyectosList = ({ proyectos, actualizarProyecto }) => {
+  const [selectedProyecto, setSelectedProyecto] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    actualizarProyecto(); 
+    actualizarProyecto();
   }, [actualizarProyecto]);
 
+  const handleEditClick = (proyecto) => {
+    setSelectedProyecto(proyecto);
+    setIsModalOpen(true);
+  };
 
-//   useEffect(() => {
-//     const fetchProyectos = async () => {
-//       try {
-//         const data = await getProyectos();
-//         setProyectos(data);
-//       } catch (error) {
-//         setError("Error fetching proyectos");
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProyecto(null);
+  };
 
-//     fetchProyectos();
-//   }, []);
-
-//   if (loading) {
-//     return <p>Loading...</p>;
-//   }
-
-//   if (error) {
-//     return <p>{error}</p>;
-//   }
+  if (!proyectos || proyectos.length === 0) {
+    return <p>No hay proyectos disponibles</p>;
+  }
 
   return (
     <div className="overflow-x-auto">
+      <h1 className="text-2xl font-semibold text-gray-800 mb-4">Lista de Proyectos</h1>
       <table className="min-w-full bg-white border border-gray-200 rounded-lg">
         <thead>
           <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-            <th className="py-3 px-6 text-left">NOMBRE PROYECTO</th>
-            <th className="py-3 px-6 text-left">FECHA_INICIAL</th>
-            <th className="py-3 px-6 text-left">FECHA_FINAL</th>
+            <th className="py-3 px-6 text-left">Nombre Proyecto</th>
+            <th className="py-3 px-6 text-left">Fecha Inicial</th>
+            <th className="py-3 px-6 text-left">Fecha Final</th>
+            <th className="py-3 px-6 text-left">Acciones</th>
           </tr>
         </thead>
         <tbody className="text-gray-600 text-sm font-light">
           {proyectos.map((proyecto) => (
             <tr
-              key={proyectos.key}
+              key={proyecto.id} // Usa proyecto.id en lugar de proyectos.key
               className="border-b border-gray-200 hover:bg-gray-100"
             >
               <td className="py-3 px-6 text-left">{proyecto.NOMBRE_PROYECTO}</td>
@@ -54,10 +46,13 @@ const ProyectosList = ({proyectos,actualizarProyecto}) => {
               <td className="py-3 px-6 text-left">{proyecto.FECHA_FINAL}</td>
               <td className="py-3 px-6 text-center">
                 <div className="flex item-center justify-center">
-                  <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                  <div
+                    className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110 cursor-pointer"
+                    onClick={() => handleEditClick(proyecto)}
+                  >
                     ✏️
                   </div>
-                  <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110">
+                  <div className="w-4 mr-2 transform hover:text-red-500 hover:scale-110 cursor-pointer">
                     🗑️
                   </div>
                 </div>
@@ -66,6 +61,14 @@ const ProyectosList = ({proyectos,actualizarProyecto}) => {
           ))}
         </tbody>
       </table>
+
+      {/* Modal para editar el proyecto */}
+      <ModalProyectos
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        proyecto={selectedProyecto}
+        actualizarProyecto={actualizarProyecto}
+      />
     </div>
   );
 };

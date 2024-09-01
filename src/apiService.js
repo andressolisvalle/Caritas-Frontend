@@ -11,6 +11,27 @@ export const getInstituciones = async () => {
         throw error;
     }
 };
+export const postInstitucion = async (institucion) => {
+    try {
+        const response = await axios.post(`${API_BASE_URL}/instituciones`, institucion);
+        return response.data;
+    } catch (error) {
+        console.error('Error creating institucion:', error);
+        throw error;
+    }
+};
+
+export const putInstitucion = async (institucion) => {
+    try {
+        const response = await axios.put(`${API_BASE_URL}/instituciones/${institucion.id}`, institucion);
+        return response.data;
+    } catch (error) {
+        console.error('Error al editar institucion:', error);
+        throw error;
+    }
+};
+
+
 
 export const getProyectos = async () => {
     try {
@@ -23,15 +44,7 @@ export const getProyectos = async () => {
     }
 };
 
-export const postInstitucion = async (institucion) => {
-    try {
-        const response = await axios.post(`${API_BASE_URL}/instituciones`, institucion);
-        return response.data;
-    } catch (error) {
-        console.error('Error creating institucion:', error);
-        throw error;
-    }
-};
+
 
 export const postProyecto = async (proyecto) => {
     try {
@@ -39,6 +52,16 @@ export const postProyecto = async (proyecto) => {
         return response.data;
     } catch (error) {
         console.error('Error creating proyecto:', error);
+        throw error;
+    }
+};
+
+export const putProyecto = async (proyecto) => {
+    try {
+        const response = await axios.put(`${API_BASE_URL}/proyectos/${proyecto.id}`, proyecto);
+        return response.data;
+    } catch (error) {
+        console.error('Error al editar el proyecto:', error);
         throw error;
     }
 };
