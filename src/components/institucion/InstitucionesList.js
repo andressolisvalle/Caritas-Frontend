@@ -35,9 +35,9 @@ const InstitucionesList = ({ instituciones, actualizarInstituciones }) => {
   }
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto h-96 shadow-md shadow-2xl">
       <h1 className="text-2xl font-semibold text-gray-800 mb-4">Lista de Instituciones</h1>
-      <table className="min-w-full bg-white border border-gray-200 rounded-lg">
+      <table className="min-w-full bg-white border border-gray-200 rounded-lg ">
         <thead>
           <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
             <th className="py-3 px-6 text-left">Nombre</th>

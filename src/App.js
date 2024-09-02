@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <Dashboard />
-      <main>
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <main className="h-[100vh] w-full">
+        <div className="w-full max-w-80 px-7 py-6">
           <Routes>
             <Route exact path="/" />
             <Route path="/proyectos" element={<Proyecto />} />

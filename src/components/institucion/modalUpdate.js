@@ -46,7 +46,7 @@ const EditarInstitucionModal = ({ isOpen, onClose, institucion, actualizarInstit
               type="text"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
@@ -56,7 +56,7 @@ const EditarInstitucionModal = ({ isOpen, onClose, institucion, actualizarInstit
               type="text"
               value={direccion}
               onChange={(e) => setDireccion(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
@@ -66,7 +66,7 @@ const EditarInstitucionModal = ({ isOpen, onClose, institucion, actualizarInstit
               type="text"
               value={telefono}
               onChange={(e) => setTelefono(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
@@ -76,7 +76,7 @@ const EditarInstitucionModal = ({ isOpen, onClose, institucion, actualizarInstit
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>

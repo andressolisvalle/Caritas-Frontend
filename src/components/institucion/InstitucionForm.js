@@ -31,10 +31,10 @@ const InstitucionForm = ({ actualizarInstituciones }) => {
     };
 
     return (
-        <div className="max-w-lg mx-auto">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Agregar Institución</h2>
+        <div className="max-w-lg mx-auto  shadow-md shadow-2xl ">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">Agregar Institución</h2>
           {message && <p className="mb-4 text-sm text-center text-gray-700">{message}</p>}
-          <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <form onSubmit={handleSubmit} className="px-8 pt-6 pb-8 mb-4 font-serif">
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">
                 Nombre
@@ -98,7 +98,7 @@ const InstitucionForm = ({ actualizarInstituciones }) => {
             <div className="flex items-center justify-between">
               <button
                 type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full  focus:outline-none focus:shadow-outline"
               >
                 Guardar
               </button>

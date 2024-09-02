@@ -36,7 +36,7 @@ const ProyectosList = ({ proyectos, actualizarProyecto }) => {
   }
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto h-96 shadow-md shadow-2xl">
       <h1 className="text-2xl font-semibold text-gray-800 mb-4">Lista de Proyectos</h1>
       <table className="min-w-full bg-white border border-gray-200 rounded-lg">
         <thead>

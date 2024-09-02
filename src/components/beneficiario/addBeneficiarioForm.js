@@ -63,14 +63,14 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
   };
 
   return (
-    <div className="container mx-auto py-4">
-      <h2 className="text-xl font-bold mb-4">Agregar Nuevo Beneficiario</h2>
+    <div className="max-w-lg mx-auto  shadow-md shadow-2xl">
+      <h2 className="text-xl font-bold mb-4 text-center">Agregar Nuevo Beneficiario</h2>
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="px-8 pt-6 pb-8 mb-4 font-serif font-bold "
       >
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Nombres:
           </label>
           <input
@@ -79,10 +79,11 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
             onChange={(e) => setNombres(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+            placeholder="Nombres"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Apellidos:
           </label>
           <input
@@ -91,10 +92,11 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
             onChange={(e) => setApellidos(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+            placeholder="Apellido"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Fecha de Nacimiento:
           </label>
           <input
@@ -103,22 +105,24 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
             onChange={(e) => setFechaNacimiento(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Teléfono:
           </label>
           <input
-            type="number"
+            type="text"
             value={telefono}
             onChange={(e) => setTelefono(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+            placeholder="Teléfono"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Dirección:
           </label>
           <input
@@ -127,10 +131,11 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
             onChange={(e) => setDireccion(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+            placeholder="Dirección"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Documento:
           </label>
           <input
@@ -139,10 +144,11 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
             onChange={(e) => setDocumento(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             required
+            placeholder="Documento"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Observaciones:
           </label>
           <input
@@ -150,10 +156,11 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
             value={observaciones}
             onChange={(e) => setObservaciones(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Observaciones"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Institución:
           </label>
           <select
@@ -173,7 +180,7 @@ const AddBeneficiarioForm = ({ actualizarBeneficiarios }) => {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+          <label className="block text-gray-700 text-sm ">
             Proyecto:
           </label>
           <select

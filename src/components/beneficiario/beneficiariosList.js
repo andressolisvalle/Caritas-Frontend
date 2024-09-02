@@ -32,13 +32,11 @@ const BeneficiariosList = ({ beneficiarios, actualizarBeneficiarios }) => {
   };
 
   return (
-    <div className="container mx-auto py-4">
+    <div className="overflow-x-auto h-96 shadow-md shadow-2xl">
       <h2 className="text-xl font-bold mb-4">Lista de Beneficiarios</h2>
-      
-      <div className="overflow-y-auto max-h-96">
-        <table className="min-w-full bg-white border border-gray-200">
+        <table className="min-w-full bg-white border border-gray-200 rounded-lg">
           <thead>
-            <tr>
+            <tr className="w-full bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">Nombre</th>
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">Apellidos</th>
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">Fecha de Nacimiento</th>
@@ -49,7 +47,7 @@ const BeneficiariosList = ({ beneficiarios, actualizarBeneficiarios }) => {
               <th className="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-gray-600 tracking-wider">Acciones</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='text-gray-600 text-sm font-light'>
             {beneficiarios.length > 0 ? (
               beneficiarios.map((beneficiario) => (
                 <tr key={beneficiario.id}>
@@ -83,7 +81,6 @@ const BeneficiariosList = ({ beneficiarios, actualizarBeneficiarios }) => {
             )}
           </tbody>
         </table>
-      </div>
 
       {isModalOpen && (
         <ModalBeneficiario 

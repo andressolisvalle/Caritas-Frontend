@@ -43,7 +43,7 @@ const ModalProyectos = ({ isOpen, onClose, proyecto, actualizarProyecto }) => {
               type="text"
               value={nombre_proyecto}
               onChange={(e) => setNombreProyecto(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
@@ -53,7 +53,7 @@ const ModalProyectos = ({ isOpen, onClose, proyecto, actualizarProyecto }) => {
               type="date"
               value={fecha_inicial}
               onChange={(e) => setFechaInicial(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-200 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
@@ -63,7 +63,7 @@ const ModalProyectos = ({ isOpen, onClose, proyecto, actualizarProyecto }) => {
               type="date"
               value={fecha_final}
               onChange={(e) => setFechaFinal(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="bg-gray-200 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
           </div>
