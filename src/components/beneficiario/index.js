@@ -13,7 +13,7 @@ function Beneficiario() {
 
   return (
     <div className="flex h-[100vh]">
-      <div className="w-2/2 px-4">
+      <div className="w-2/3 px-4">
       <BeneficiariosList beneficiarios={beneficiarios} actualizarBeneficiarios={actualizarBeneficiario}/>
       </div>
       <div className="w-1/3">

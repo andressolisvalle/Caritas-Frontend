@@ -2,6 +2,16 @@ import axios from "axios";
 
 const API_BASE_URL = 'http://localhost:8000/api';
 
+export const getDashboard = async () => {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/dashboard`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching dashboard:', error);
+        throw error;
+    }
+};
+
 export const getInstituciones = async () => {
     try {
         const response = await axios.get(`${API_BASE_URL}/instituciones`);

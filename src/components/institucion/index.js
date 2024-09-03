@@ -14,7 +14,7 @@ function Institucion() {
 
   return (
     <div className="flex h-[100vh]">
-      <div className="w-1/2">
+      <div className="w-3/2">
         <InstitucionesList
           instituciones={instituciones}
           actualizarInstituciones={actualizarInstituciones}

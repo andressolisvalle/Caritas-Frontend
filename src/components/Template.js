@@ -3,25 +3,25 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
-    const [data, setData] = useState({
-      beneficiariosPorProyecto: [],
-      beneficiariosPorInstitucion: []
-    });
+    // const [data, setData] = useState({
+    //   beneficiariosPorProyecto: [],
+    //   beneficiariosPorInstitucion: []
+    // });
   
-    useEffect(() => {
-      axios.get('http://localhost:8000/api/dashboard')
+    // useEffect(() => {
+    //   axios.get('http://localhost:8000/api/dashboard')
       
-        .then(response => {
-            console.log('este es el response', response);
-          setData({
-            beneficiariosPorProyecto: response.data.beneficiarios_por_proyecto,
-            beneficiariosPorInstitucion: response.data.beneficiarios_por_institucion
-          });
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
-    }, []);
+    //     .then(response => {
+    //         console.log('este es el response', response);
+    //       setData({
+    //         beneficiariosPorProyecto: response.data.beneficiarios_por_proyecto,
+    //         beneficiariosPorInstitucion: response.data.beneficiarios_por_institucion
+    //       });
+    //     })
+    //     .catch(error => {
+    //       console.error('Error fetching data:', error);
+    //     });
+    // }, []);
 
     return (
       <div className="min-h-full">
@@ -34,8 +34,8 @@ const Dashboard = () => {
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">            
-                    <Link to='/' className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                        Dashboard
+                    <Link to='/dashboard' className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                        Inicio
                     </Link>
                     <Link to='/proyectos' className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                         Proyectos
@@ -134,6 +134,7 @@ const Dashboard = () => {
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
           </div>
         </header> */}
+
         
       </div>
     );
