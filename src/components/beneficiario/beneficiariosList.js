@@ -71,9 +71,6 @@ const BeneficiariosList = ({ beneficiarios, actualizarBeneficiarios }) => {
           {beneficiarios.length > 0 ? (
             beneficiarios.map((beneficiario) => {
               const ben = beneficiario.ID_INSTITUCION;
-              console.log(beneficiario);
-              console.log(instituciones);
-              console.log(proyectos);
               const institucion = instituciones.find(inst => inst.id == beneficiario.ID_INSTITUCION);
               const proyecto = proyectos.find(proj => proj.id == beneficiario.ID_PROYECTO);
 

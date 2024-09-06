@@ -181,7 +181,7 @@ const ModalBeneficiario = ({
                 value={idInstitucion}
                 onChange={(e) => setIdInstitucion(e.target.value)}
                 className="block appearance-none w-full bg-gray-200 border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white"
-                required
+                
               >
                 <option value="" disabled>
                   Seleccione una institución
@@ -204,7 +204,7 @@ const ModalBeneficiario = ({
                 value={idProyecto}
                 onChange={(e) => setIdProyecto(e.target.value)}
                 className="block appearance-none w-full bg-gray-200 border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white"
-                required
+                
               >
                 <option value="" disabled>
                   Seleccione un proyecto

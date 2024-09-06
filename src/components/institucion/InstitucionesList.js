@@ -13,7 +13,6 @@ const InstitucionesList = ({ instituciones, actualizarInstituciones }) => {
   const handleEditClick = (institucion) => {
     setSelectedInstitucion(institucion);
     setIsModalOpen(true);
-    console.log(isModalOpen);
   };
   const handleCloseModal = () => {
     setIsModalOpen(false);
